@@ -1,0 +1,77 @@
+whl은 google-drive/whl 폴더에서 2개 다운로드 (flash_attn, spas_sage_attn)
+
+my-project/
+├── Dockerfile
+└── wheels/
+    ├── flash_attn-2.7.2.post1-cp310-cp310-linux_x86_64.whl  (예시 이름)
+    └── spas_sage_attn-0.1.0-cp310-cp310-linux_x86_64.whl    (예시 이름)
+
+위의 폴더구조 기대
+
+
+---
+
+# 1. 빌드 (Linux/amd64 아키텍처로 빌드)
+# 태그명(myid/wan-turbo:fast)은 본인의 Docker Hub ID로 변경하세요.
+docker build --platform linux/amd64 -t myid/wan-turbo:fast .
+
+# 2. 푸시 (Docker Hub에 업로드)
+docker push myid/wan-turbo:fast
+
+
+---
+
+[vessl 실행용 yaml 예시]
+name: turbo-diffusion-fast
+tags:
+  - daegu
+  - video
+  - fast-start
+resources:
+  cluster: vessl-kr-a100-80g-sxm
+  preset: gpu-a100-80g-small
+
+# [핵심] 방금 만든 커스텀 이미지 사용
+image: myid/wan-turbo:fast
+
+run: |-
+  set -e
+  
+  # 1. SSH 시작 (Jupyter 연결용)
+  service ssh start
+  
+  echo "[INFO] Environment is pre-built. Starting setup..."
+  
+  # 2. 모델 다운로드 (이미 있는 경우 스킵하는 로직 포함)
+  mkdir -p checkpoints
+  cd checkpoints
+
+  dl_and_check() {
+    local name="$1"
+    local url="$2"
+    if [ -f "$name" ]; then
+      echo "✓ $name exists. Skipping download."
+    else
+      echo "Downloading: $name"
+      curl -L --retry 8 --retry-delay 2 -o "$name" "$url"
+      echo "✓ Downloaded: $(du -sh "$name" | cut -f1)"
+    fi
+  }
+
+  echo "[Step 1/1] Checking/Downloading Models..."
+  dl_and_check "Wan2.1_VAE.pth" "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B/resolve/main/Wan2.1_VAE.pth"
+  dl_and_check "models_t5_umt5-xxl-enc-bf16.pth" "https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B/resolve/main/models_t5_umt5-xxl-enc-bf16.pth"
+  dl_and_check "TurboWan2.2-I2V-A14B-high-720P-quant.pth" "https://huggingface.co/TurboDiffusion/TurboWan2.2-I2V-A14B-720P/resolve/main/TurboWan2.2-I2V-A14B-high-720P-quant.pth"
+  dl_and_check "TurboWan2.2-I2V-A14B-low-720P-quant.pth" "https://huggingface.co/TurboDiffusion/TurboWan2.2-I2V-A14B-720P/resolve/main/TurboWan2.2-I2V-A14B-low-720P-quant.pth"
+
+  echo "Setup complete. Keeping container alive."
+  sleep infinity
+
+interactive:
+  max_runtime: 24h
+  jupyter:
+    idle_timeout: 120m
+ports:
+  - name: gradio
+    type: http
+    port: 7860
