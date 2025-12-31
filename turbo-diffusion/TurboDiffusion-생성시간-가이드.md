@@ -241,14 +241,14 @@ frames_to_encode = torch.cat(
 ### 4-2. 프레임 수 계산 방법
 
 ```
-프레임 수 = 목표 초 × 16 (FPS)
+프레임 수 = 목표 초 × 16 + 1 (FPS)
 ```
 
 **예시**:
-- 3초: 3 × 16 = **48 프레임**
-- 5초: 5 × 16 = **80 프레임**
-- 10초: 10 × 16 = **160 프레임**
-- 15초: 15 × 16 = **240 프레임** (⚠️ VAE 제약 초과)
+- 3초: 3 × 16 + 1 = **49 프레임**
+- 5초: 5 × 16 + 1 = **81 프레임**
+- 10초: 10 × 16 + 1 = **161 프레임**
+- 15초: 15 × 16 + 1 = **241 프레임** (⚠️ VAE 제약 초과 예상)
 
 ### 4-3. 권장 범위
 
@@ -272,28 +272,21 @@ frames_to_encode = torch.cat(
 ### 5-1. 3초 영상 생성
 ```bash
 python turbodiffusion/inference/wan2.2_i2v_infer.py \
-    --num_frames 48 \
+    --num_frames 49 \
     ...
 ```
 
 ### 5-2. 5초 영상 생성
 ```bash
 python turbodiffusion/inference/wan2.2_i2v_infer.py \
-    --num_frames 80 \
+    --num_frames 81 \
     ...
 ```
 
 ### 5-3. 10초 영상 생성
 ```bash
 python turbodiffusion/inference/wan2.2_i2v_infer.py \
-    --num_frames 160 \
-    ...
-```
-
-### 5-4. 최대 길이 영상 생성 (약 12.3초)
-```bash
-python turbodiffusion/inference/wan2.2_i2v_infer.py \
-    --num_frames 197 \
+    --num_frames 161 \
     ...
 ```
 
