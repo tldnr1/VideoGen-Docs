@@ -30,37 +30,6 @@
 
 **참고**: 241 프레임 테스트는 텐서 크기 불일치 오류(`The size of tensor a (61) must match the size of tensor b (50) at non-singleton dimension 2`)로 인해 실패했습니다.
 
-### 비디오 미리보기
-
-<details>
-<summary>비디오 보기 (클릭하여 확장)</summary>
-
-#### 49 Frames
-<video width="320" controls>
-  <source src="videos/scenario1/scenario1_frames_49.mp4" type="video/mp4">
-  [비디오 다운로드](videos/scenario1/scenario1_frames_49.mp4)
-</video>
-
-#### 81 Frames
-<video width="320" controls>
-  <source src="videos/scenario1/scenario1_frames_81.mp4" type="video/mp4">
-  [비디오 다운로드](videos/scenario1/scenario1_frames_81.mp4)
-</video>
-
-#### 129 Frames
-<video width="320" controls>
-  <source src="videos/scenario1/scenario1_frames_129.mp4" type="video/mp4">
-  [비디오 다운로드](videos/scenario1/scenario1_frames_129.mp4)
-</video>
-
-#### 193 Frames
-<video width="320" controls>
-  <source src="videos/scenario1/scenario1_frames_193.mp4" type="video/mp4">
-  [비디오 다운로드](videos/scenario1/scenario1_frames_193.mp4)
-</video>
-
-</details>
-
 ---
 
 ## Scenario 2: Resolution 및 프롬프트 조합 테스트
@@ -88,25 +57,6 @@
 
 **720p 평균 생성 시간**: 101.14초 (최소: 100.49초, 최대: 101.75초)
 
-#### 720p 비디오 미리보기
-
-<details>
-<summary>720p 비디오 보기 (클릭하여 확장)</summary>
-
-##### Moving Text
-- **Run 1**: <video width="320" controls><source src="videos/scenario2/720p/scenario2_720p_moving_text_run1.mp4" type="video/mp4">[다운로드](videos/scenario2/720p/scenario2_720p_moving_text_run1.mp4)</video>
-- **Run 2**: <video width="320" controls><source src="videos/scenario2/720p/scenario2_720p_moving_text_run2.mp4" type="video/mp4">[다운로드](videos/scenario2/720p/scenario2_720p_moving_text_run2.mp4)</video>
-
-##### Static Text
-- **Run 1**: <video width="320" controls><source src="videos/scenario2/720p/scenario2_720p_static_text_run1.mp4" type="video/mp4">[다운로드](videos/scenario2/720p/scenario2_720p_static_text_run1.mp4)</video>
-- **Run 2**: <video width="320" controls><source src="videos/scenario2/720p/scenario2_720p_static_text_run2.mp4" type="video/mp4">[다운로드](videos/scenario2/720p/scenario2_720p_static_text_run2.mp4)</video>
-
-##### Static Text Approaching
-- **Run 1**: <video width="320" controls><source src="videos/scenario2/720p/scenario2_720p_static_text_approaching_run1.mp4" type="video/mp4">[다운로드](videos/scenario2/720p/scenario2_720p_static_text_approaching_run1.mp4)</video>
-- **Run 2**: <video width="320" controls><source src="videos/scenario2/720p/scenario2_720p_static_text_approaching_run2.mp4" type="video/mp4">[다운로드](videos/scenario2/720p/scenario2_720p_static_text_approaching_run2.mp4)</video>
-
-</details>
-
 ---
 
 ### 480p 해상도 테스트 결과
@@ -123,25 +73,6 @@
 | Static Text Approaching | Run 2 | 46.51 | 43,657.49 | 29,011.04 | [📹 비디오 보기](videos/scenario2/480p/scenario2_480p_static_text_approaching_run2.mp4) |
 
 **480p 평균 생성 시간**: 46.22초 (최소: 45.93초, 최대: 47.92초)
-
-#### 480p 비디오 미리보기
-
-<details>
-<summary>480p 비디오 보기 (클릭하여 확장)</summary>
-
-##### Moving Text
-- **Run 1**: <video width="320" controls><source src="videos/scenario2/480p/scenario2_480p_moving_text_run1.mp4" type="video/mp4">[다운로드](videos/scenario2/480p/scenario2_480p_moving_text_run1.mp4)</video>
-- **Run 2**: <video width="320" controls><source src="videos/scenario2/480p/scenario2_480p_moving_text_run2.mp4" type="video/mp4">[다운로드](videos/scenario2/480p/scenario2_480p_moving_text_run2.mp4)</video>
-
-##### Static Text
-- **Run 1**: <video width="320" controls><source src="videos/scenario2/480p/scenario2_480p_static_text_run1.mp4" type="video/mp4">[다운로드](videos/scenario2/480p/scenario2_480p_static_text_run1.mp4)</video>
-- **Run 2**: <video width="320" controls><source src="videos/scenario2/480p/scenario2_480p_static_text_run2.mp4" type="video/mp4">[다운로드](videos/scenario2/480p/scenario2_480p_static_text_run2.mp4)</video>
-
-##### Static Text Approaching
-- **Run 1**: <video width="320" controls><source src="videos/scenario2/480p/scenario2_480p_static_text_approaching_run1.mp4" type="video/mp4">[다운로드](videos/scenario2/480p/scenario2_480p_static_text_approaching_run1.mp4)</video>
-- **Run 2**: <video width="320" controls><source src="videos/scenario2/480p/scenario2_480p_static_text_approaching_run2.mp4" type="video/mp4">[다운로드](videos/scenario2/480p/scenario2_480p_static_text_approaching_run2.mp4)</video>
-
-</details>
 
 ---
 
@@ -187,9 +118,7 @@
 
 ### 비디오 파일 접근 방법
 
-1. **표의 비디오 링크**: 각 테스트 결과 표에서 📹 아이콘을 클릭하여 비디오를 다운로드하거나 재생할 수 있습니다.
-2. **비디오 미리보기 섹션**: 각 시나리오 하단의 `<details>` 섹션을 클릭하여 작은 크기의 비디오를 인라인으로 확인할 수 있습니다.
-3. **직접 링크**: 모든 비디오는 `videos/` 폴더에 저장되어 있으며, 상대 경로로 접근 가능합니다.
+- **표의 비디오 링크**: 각 테스트 결과 표에서 📹 아이콘을 클릭하여 비디오를 다운로드하거나 재생할 수 있습니다.
 
 ### 테스트 환경
 
