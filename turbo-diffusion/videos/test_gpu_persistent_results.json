@@ -1,0 +1,381 @@
+{
+  "summary": {
+    "total_tests": 17,
+    "completed": 17,
+    "total_time_seconds": 1647.375743150711,
+    "start_time": "2025-12-31T06:45:10.054510",
+    "end_time": "2025-12-31T06:45:10.054514"
+  },
+  "scenario1": {
+    "description": "다양한 frame 수 테스트 (49, 81, 129, 193, 241)",
+    "count": 5
+  },
+  "scenario2": {
+    "description": "Resolution (720p, 480p) 및 프롬프트 조합 테스트",
+    "count": 12
+  },
+  "results": [
+    {
+      "test_name": "scenario1_frames_49",
+      "timestamp": "2025-12-31T06:19:09.209474",
+      "generation_time_seconds": 76.36096477508545,
+      "output_path": "output/test_gpu_persistent/scenario1_frames_49.mp4",
+      "parameters": {
+        "num_frames": 49,
+        "resolution": "720p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 24728.0,
+        "memory_max_allocated_mb": 47920.76171875
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11193.00732421875,
+        "max_memory_mb": 45704.337890625,
+        "avg_memory_mb": 31288.16589518229,
+        "peak_memory_mb": 47920.76171875
+      }
+    },
+    {
+      "test_name": "scenario1_frames_81",
+      "timestamp": "2025-12-31T06:21:01.933205",
+      "generation_time_seconds": 102.35581994056702,
+      "output_path": "output/test_gpu_persistent/scenario1_frames_81.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "720p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 26274.0,
+        "memory_max_allocated_mb": 49200.90673828125
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11886.08935546875,
+        "max_memory_mb": 49200.90673828125,
+        "avg_memory_mb": 32701.22135895374,
+        "peak_memory_mb": 49200.90673828125
+      }
+    },
+    {
+      "test_name": "scenario1_frames_129",
+      "timestamp": "2025-12-31T06:23:59.491002",
+      "generation_time_seconds": 167.94222688674927,
+      "output_path": "output/test_gpu_persistent/scenario1_frames_129.mp4",
+      "parameters": {
+        "num_frames": 129,
+        "resolution": "720p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 26184.0,
+        "memory_max_allocated_mb": 54994.693359375
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11499.21630859375,
+        "max_memory_mb": 53817.25146484375,
+        "avg_memory_mb": 35520.896427188905,
+        "peak_memory_mb": 54994.693359375
+      }
+    },
+    {
+      "test_name": "scenario1_frames_193",
+      "timestamp": "2025-12-31T06:28:40.324798",
+      "generation_time_seconds": 271.20755100250244,
+      "output_path": "output/test_gpu_persistent/scenario1_frames_193.mp4",
+      "parameters": {
+        "num_frames": 193,
+        "resolution": "720p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 26498.0,
+        "memory_max_allocated_mb": 62906.828125
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11440.77685546875,
+        "max_memory_mb": 62906.828125,
+        "avg_memory_mb": 40688.30506004051,
+        "peak_memory_mb": 62906.828125
+      }
+    },
+    {
+      "test_name": "scenario1_frames_241",
+      "timestamp": "2025-12-31T06:28:55.404017",
+      "error": "The size of tensor a (61) must match the size of tensor b (50) at non-singleton dimension 2",
+      "parameters": {
+        "num_frames": 241,
+        "resolution": "720p",
+        "adaptive_resolution": true
+      }
+    },
+    {
+      "test_name": "scenario2_720p_moving_text_run1",
+      "timestamp": "2025-12-31T06:30:44.943537",
+      "generation_time_seconds": 101.22751569747925,
+      "output_path": "output/test_gpu_persistent/scenario2_720p_moving_text_run1.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "720p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 25550.0,
+        "memory_max_allocated_mb": 49161.6015625
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11248.6005859375,
+        "max_memory_mb": 49155.7998046875,
+        "avg_memory_mb": 32857.33158203125,
+        "peak_memory_mb": 49161.6015625
+      }
+    },
+    {
+      "test_name": "scenario2_720p_moving_text_run2",
+      "timestamp": "2025-12-31T06:32:36.177744",
+      "generation_time_seconds": 101.58448767662048,
+      "output_path": "output/test_gpu_persistent/scenario2_720p_moving_text_run2.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "720p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 26094.0,
+        "memory_max_allocated_mb": 49184.13916015625
+      },
+      "monitor_stats": {
+        "min_memory_mb": 12106.95263671875,
+        "max_memory_mb": 49184.13916015625,
+        "avg_memory_mb": 32863.66347461909,
+        "peak_memory_mb": 49184.13916015625
+      }
+    },
+    {
+      "test_name": "scenario2_720p_static_text_run1",
+      "timestamp": "2025-12-31T06:34:26.280410",
+      "generation_time_seconds": 101.74914836883545,
+      "output_path": "output/test_gpu_persistent/scenario2_720p_static_text_run1.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "720p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 25922.0,
+        "memory_max_allocated_mb": 49167.44091796875
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11087.64208984375,
+        "max_memory_mb": 49161.63916015625,
+        "avg_memory_mb": 32772.41406491723,
+        "peak_memory_mb": 49167.44091796875
+      }
+    },
+    {
+      "test_name": "scenario2_720p_static_text_run2",
+      "timestamp": "2025-12-31T06:36:16.656239",
+      "generation_time_seconds": 101.22371983528137,
+      "output_path": "output/test_gpu_persistent/scenario2_720p_static_text_run2.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "720p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 25588.0,
+        "memory_max_allocated_mb": 49174.65966796875
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11728.56982421875,
+        "max_memory_mb": 49168.451171875,
+        "avg_memory_mb": 32956.684446420244,
+        "peak_memory_mb": 49174.65966796875
+      }
+    },
+    {
+      "test_name": "scenario2_720p_static_text_approaching_run1",
+      "timestamp": "2025-12-31T06:38:04.698429",
+      "generation_time_seconds": 100.48526382446289,
+      "output_path": "output/test_gpu_persistent/scenario2_720p_static_text_approaching_run1.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "720p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 26926.0,
+        "memory_max_allocated_mb": 49184.15966796875
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11514.3935546875,
+        "max_memory_mb": 49177.951171875,
+        "avg_memory_mb": 33001.219591610396,
+        "peak_memory_mb": 49184.15966796875
+      }
+    },
+    {
+      "test_name": "scenario2_720p_static_text_approaching_run2",
+      "timestamp": "2025-12-31T06:39:52.858689",
+      "generation_time_seconds": 100.71768569946289,
+      "output_path": "output/test_gpu_persistent/scenario2_720p_static_text_approaching_run2.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "720p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 25240.0,
+        "memory_max_allocated_mb": 49148.47216796875
+      },
+      "monitor_stats": {
+        "min_memory_mb": 12073.7880859375,
+        "max_memory_mb": 49142.263671875,
+        "avg_memory_mb": 32920.14225830078,
+        "peak_memory_mb": 49148.47216796875
+      }
+    },
+    {
+      "test_name": "scenario2_480p_moving_text_run1",
+      "timestamp": "2025-12-31T06:40:48.427920",
+      "generation_time_seconds": 47.91810917854309,
+      "output_path": "output/test_gpu_persistent/scenario2_480p_moving_text_run1.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "480p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 16640.0,
+        "memory_max_allocated_mb": 43431.0478515625
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11158.365234375,
+        "max_memory_mb": 42901.84814453125,
+        "avg_memory_mb": 29229.51226870888,
+        "peak_memory_mb": 43431.0478515625
+      }
+    },
+    {
+      "test_name": "scenario2_480p_moving_text_run2",
+      "timestamp": "2025-12-31T06:41:41.613067",
+      "generation_time_seconds": 46.41154217720032,
+      "output_path": "output/test_gpu_persistent/scenario2_480p_moving_text_run2.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "480p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 16624.0,
+        "memory_max_allocated_mb": 43656.47412109375
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11527.05224609375,
+        "max_memory_mb": 43637.3896484375,
+        "avg_memory_mb": 29293.3223997682,
+        "peak_memory_mb": 43656.47412109375
+      }
+    },
+    {
+      "test_name": "scenario2_480p_static_text_run1",
+      "timestamp": "2025-12-31T06:42:34.014987",
+      "generation_time_seconds": 46.13608694076538,
+      "output_path": "output/test_gpu_persistent/scenario2_480p_static_text_run1.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "480p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 16624.0,
+        "memory_max_allocated_mb": 43657.49267578125
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11227.72265625,
+        "max_memory_mb": 43654.21630859375,
+        "avg_memory_mb": 29103.514820140797,
+        "peak_memory_mb": 43657.49267578125
+      }
+    },
+    {
+      "test_name": "scenario2_480p_static_text_run2",
+      "timestamp": "2025-12-31T06:43:26.259404",
+      "generation_time_seconds": 45.93441319465637,
+      "output_path": "output/test_gpu_persistent/scenario2_480p_static_text_run2.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "480p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 16624.0,
+        "memory_max_allocated_mb": 43657.49267578125
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11504.04345703125,
+        "max_memory_mb": 43638.408203125,
+        "avg_memory_mb": 29300.278545673078,
+        "peak_memory_mb": 43657.49267578125
+      }
+    },
+    {
+      "test_name": "scenario2_480p_static_text_approaching_run1",
+      "timestamp": "2025-12-31T06:44:18.414678",
+      "generation_time_seconds": 46.47187304496765,
+      "output_path": "output/test_gpu_persistent/scenario2_480p_static_text_approaching_run1.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "480p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 16624.0,
+        "memory_max_allocated_mb": 43657.49267578125
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11527.05224609375,
+        "max_memory_mb": 43654.21630859375,
+        "avg_memory_mb": 28920.143788213314,
+        "peak_memory_mb": 43657.49267578125
+      }
+    },
+    {
+      "test_name": "scenario2_480p_static_text_approaching_run2",
+      "timestamp": "2025-12-31T06:45:10.053679",
+      "generation_time_seconds": 46.508487701416016,
+      "output_path": "output/test_gpu_persistent/scenario2_480p_static_text_approaching_run2.mp4",
+      "parameters": {
+        "num_frames": 81,
+        "resolution": "480p",
+        "adaptive_resolution": true
+      },
+      "gpu_stats": {
+        "memory_allocated_mb": 11087.64208984375,
+        "memory_reserved_mb": 16624.0,
+        "memory_max_allocated_mb": 43657.49267578125
+      },
+      "monitor_stats": {
+        "min_memory_mb": 11158.99267578125,
+        "max_memory_mb": 43128.85546875,
+        "avg_memory_mb": 29011.035336701767,
+        "peak_memory_mb": 43657.49267578125
+      }
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+# GPU Persistent 테스트 결과
+
+## 테스트 요약
+
+- **총 테스트 수**: 17개
+- **완료된 테스트**: 17개
+- **총 소요 시간**: 1,647.38초 (약 27.5분)
+- **시작 시간**: 2025-12-31 06:45:10
+- **종료 시간**: 2025-12-31 06:45:10
+
+---
+
+## Scenario 1: 다양한 Frame 수 테스트
+
+### 개요
+- **설명**: 다양한 프레임 수(49, 81, 129, 193, 241)에 대한 성능 테스트
+- **테스트 수**: 5개
+- **해상도**: 720p
+- **적응형 해상도**: 활성화
+
+### 테스트 결과 통합 표
+
+| 프레임 수 | 생성 시간 (초) | 프레임당 시간 (초) | GPU 메모리 (할당) MB | GPU 메모리 (예약) MB | 최대 GPU 메모리 MB | 평균 메모리 사용량 MB | 피크 메모리 사용량 MB | 비디오 링크 |
+|-----------|----------------|-------------------|---------------------|---------------------|-------------------|---------------------|---------------------|------------|
+| 49 | 76.36 | 1.56 | 11,087.64 | 24,728.00 | 47,920.76 | 31,288.17 | 47,920.76 | [📹 비디오 보기](videos/scenario1/scenario1_frames_49.mp4) |
+| 81 | 102.36 | 1.26 | 11,087.64 | 26,274.00 | 49,200.91 | 32,701.22 | 49,200.91 | [📹 비디오 보기](videos/scenario1/scenario1_frames_81.mp4) |
+| 129 | 167.94 | 1.30 | 11,087.64 | 26,184.00 | 54,994.69 | 35,520.90 | 54,994.69 | [📹 비디오 보기](videos/scenario1/scenario1_frames_129.mp4) |
+| 193 | 271.21 | 1.41 | 11,087.64 | 26,498.00 | 62,906.83 | 40,688.31 | 62,906.83 | [📹 비디오 보기](videos/scenario1/scenario1_frames_193.mp4) |
+| 241 | ❌ 실패 | - | - | - | - | - | - | - |
+
+**참고**: 241 프레임 테스트는 텐서 크기 불일치 오류(`The size of tensor a (61) must match the size of tensor b (50) at non-singleton dimension 2`)로 인해 실패했습니다.
+
+### 비디오 미리보기
+
+<details>
+<summary>비디오 보기 (클릭하여 확장)</summary>
+
+#### 49 Frames
+<video width="320" controls>
+  <source src="videos/scenario1/scenario1_frames_49.mp4" type="video/mp4">
+  [비디오 다운로드](videos/scenario1/scenario1_frames_49.mp4)
+</video>
+
+#### 81 Frames
+<video width="320" controls>
+  <source src="videos/scenario1/scenario1_frames_81.mp4" type="video/mp4">
+  [비디오 다운로드](videos/scenario1/scenario1_frames_81.mp4)
+</video>
+
+#### 129 Frames
+<video width="320" controls>
+  <source src="videos/scenario1/scenario1_frames_129.mp4" type="video/mp4">
+  [비디오 다운로드](videos/scenario1/scenario1_frames_129.mp4)
+</video>
+
+#### 193 Frames
+<video width="320" controls>
+  <source src="videos/scenario1/scenario1_frames_193.mp4" type="video/mp4">
+  [비디오 다운로드](videos/scenario1/scenario1_frames_193.mp4)
+</video>
+
+</details>
+
+---
+
+## Scenario 2: Resolution 및 프롬프트 조합 테스트
+
+### 개요
+- **설명**: Resolution (720p, 480p) 및 프롬프트 조합 테스트
+- **테스트 수**: 12개
+- **프레임 수**: 81
+- **적응형 해상도**: 활성화
+
+---
+
+### 720p 해상도 테스트 결과
+
+#### 통합 결과 표
+
+| 프롬프트 타입 | Run | 생성 시간 (초) | 최대 GPU 메모리 MB | 평균 메모리 사용량 MB | 비디오 링크 |
+|--------------|-----|----------------|-------------------|---------------------|------------|
+| Moving Text | Run 1 | 101.23 | 49,161.60 | 32,857.33 | [📹 비디오 보기](videos/scenario2/720p/scenario2_720p_moving_text_run1.mp4) |
+| Moving Text | Run 2 | 101.58 | 49,184.14 | 32,863.66 | [📹 비디오 보기](videos/scenario2/720p/scenario2_720p_moving_text_run2.mp4) |
+| Static Text | Run 1 | 101.75 | 49,167.44 | 32,772.41 | [📹 비디오 보기](videos/scenario2/720p/scenario2_720p_static_text_run1.mp4) |
+| Static Text | Run 2 | 101.22 | 49,174.66 | 32,956.68 | [📹 비디오 보기](videos/scenario2/720p/scenario2_720p_static_text_run2.mp4) |
+| Static Text Approaching | Run 1 | 100.49 | 49,184.16 | 33,001.22 | [📹 비디오 보기](videos/scenario2/720p/scenario2_720p_static_text_approaching_run1.mp4) |
+| Static Text Approaching | Run 2 | 100.72 | 49,148.47 | 32,920.14 | [📹 비디오 보기](videos/scenario2/720p/scenario2_720p_static_text_approaching_run2.mp4) |
+
+**720p 평균 생성 시간**: 101.14초 (최소: 100.49초, 최대: 101.75초)
+
+#### 720p 비디오 미리보기
+
+<details>
+<summary>720p 비디오 보기 (클릭하여 확장)</summary>
+
+##### Moving Text
+- **Run 1**: <video width="320" controls><source src="videos/scenario2/720p/scenario2_720p_moving_text_run1.mp4" type="video/mp4">[다운로드](videos/scenario2/720p/scenario2_720p_moving_text_run1.mp4)</video>
+- **Run 2**: <video width="320" controls><source src="videos/scenario2/720p/scenario2_720p_moving_text_run2.mp4" type="video/mp4">[다운로드](videos/scenario2/720p/scenario2_720p_moving_text_run2.mp4)</video>
+
+##### Static Text
+- **Run 1**: <video width="320" controls><source src="videos/scenario2/720p/scenario2_720p_static_text_run1.mp4" type="video/mp4">[다운로드](videos/scenario2/720p/scenario2_720p_static_text_run1.mp4)</video>
+- **Run 2**: <video width="320" controls><source src="videos/scenario2/720p/scenario2_720p_static_text_run2.mp4" type="video/mp4">[다운로드](videos/scenario2/720p/scenario2_720p_static_text_run2.mp4)</video>
+
+##### Static Text Approaching
+- **Run 1**: <video width="320" controls><source src="videos/scenario2/720p/scenario2_720p_static_text_approaching_run1.mp4" type="video/mp4">[다운로드](videos/scenario2/720p/scenario2_720p_static_text_approaching_run1.mp4)</video>
+- **Run 2**: <video width="320" controls><source src="videos/scenario2/720p/scenario2_720p_static_text_approaching_run2.mp4" type="video/mp4">[다운로드](videos/scenario2/720p/scenario2_720p_static_text_approaching_run2.mp4)</video>
+
+</details>
+
+---
+
+### 480p 해상도 테스트 결과
+
+#### 통합 결과 표
+
+| 프롬프트 타입 | Run | 생성 시간 (초) | 최대 GPU 메모리 MB | 평균 메모리 사용량 MB | 비디오 링크 |
+|--------------|-----|----------------|-------------------|---------------------|------------|
+| Moving Text | Run 1 | 47.92 | 43,431.05 | 29,229.51 | [📹 비디오 보기](videos/scenario2/480p/scenario2_480p_moving_text_run1.mp4) |
+| Moving Text | Run 2 | 46.41 | 43,656.47 | 29,293.32 | [📹 비디오 보기](videos/scenario2/480p/scenario2_480p_moving_text_run2.mp4) |
+| Static Text | Run 1 | 46.14 | 43,657.49 | 29,103.51 | [📹 비디오 보기](videos/scenario2/480p/scenario2_480p_static_text_run1.mp4) |
+| Static Text | Run 2 | 45.93 | 43,657.49 | 29,300.28 | [📹 비디오 보기](videos/scenario2/480p/scenario2_480p_static_text_run2.mp4) |
+| Static Text Approaching | Run 1 | 46.47 | 43,657.49 | 28,920.14 | [📹 비디오 보기](videos/scenario2/480p/scenario2_480p_static_text_approaching_run1.mp4) |
+| Static Text Approaching | Run 2 | 46.51 | 43,657.49 | 29,011.04 | [📹 비디오 보기](videos/scenario2/480p/scenario2_480p_static_text_approaching_run2.mp4) |
+
+**480p 평균 생성 시간**: 46.22초 (최소: 45.93초, 최대: 47.92초)
+
+#### 480p 비디오 미리보기
+
+<details>
+<summary>480p 비디오 보기 (클릭하여 확장)</summary>
+
+##### Moving Text
+- **Run 1**: <video width="320" controls><source src="videos/scenario2/480p/scenario2_480p_moving_text_run1.mp4" type="video/mp4">[다운로드](videos/scenario2/480p/scenario2_480p_moving_text_run1.mp4)</video>
+- **Run 2**: <video width="320" controls><source src="videos/scenario2/480p/scenario2_480p_moving_text_run2.mp4" type="video/mp4">[다운로드](videos/scenario2/480p/scenario2_480p_moving_text_run2.mp4)</video>
+
+##### Static Text
+- **Run 1**: <video width="320" controls><source src="videos/scenario2/480p/scenario2_480p_static_text_run1.mp4" type="video/mp4">[다운로드](videos/scenario2/480p/scenario2_480p_static_text_run1.mp4)</video>
+- **Run 2**: <video width="320" controls><source src="videos/scenario2/480p/scenario2_480p_static_text_run2.mp4" type="video/mp4">[다운로드](videos/scenario2/480p/scenario2_480p_static_text_run2.mp4)</video>
+
+##### Static Text Approaching
+- **Run 1**: <video width="320" controls><source src="videos/scenario2/480p/scenario2_480p_static_text_approaching_run1.mp4" type="video/mp4">[다운로드](videos/scenario2/480p/scenario2_480p_static_text_approaching_run1.mp4)</video>
+- **Run 2**: <video width="320" controls><source src="videos/scenario2/480p/scenario2_480p_static_text_approaching_run2.mp4" type="video/mp4">[다운로드](videos/scenario2/480p/scenario2_480p_static_text_approaching_run2.mp4)</video>
+
+</details>
+
+---
+
+## 성능 분석 요약
+
+### Frame 수별 생성 시간 (Scenario 1)
+
+| 프레임 수 | 생성 시간 (초) | 프레임당 시간 (초) | 비고 |
+|-----------|----------------|-------------------|------|
+| 49 | 76.36 | 1.56 | ✅ 성공 |
+| 81 | 102.36 | 1.26 | ✅ 성공 |
+| 129 | 167.94 | 1.30 | ✅ 성공 |
+| 193 | 271.21 | 1.41 | ✅ 성공 |
+| 241 | - | - | ❌ 실패 (텐서 크기 불일치) |
+
+**분석**: 프레임 수가 증가할수록 생성 시간이 선형적으로 증가하며, 프레임당 시간은 약 1.26~1.56초 사이를 유지합니다.
+
+### 해상도별 성능 비교 (Scenario 2)
+
+| 해상도 | 평균 생성 시간 (초) | 최소 시간 (초) | 최대 시간 (초) | 성능 비율 |
+|--------|-------------------|---------------|---------------|----------|
+| 720p | 101.14 | 100.49 | 101.75 | 1.00x (기준) |
+| 480p | 46.22 | 45.93 | 47.92 | **2.19배 빠름** |
+
+**분석**: 480p는 720p보다 약 **2.19배** 빠르게 생성됩니다.
+
+### GPU 메모리 사용량 분석
+
+| 시나리오 | 평균 최대 메모리 (MB) | 최소 메모리 (MB) | 최대 메모리 (MB) |
+|---------|---------------------|-----------------|-----------------|
+| Scenario 1 (720p, 다양한 프레임) | 54,255.80 | 47,920.76 | 62,906.83 |
+| Scenario 2 (720p, 81 프레임) | 49,173.00 | 49,148.47 | 49,184.16 |
+| Scenario 2 (480p, 81 프레임) | 43,643.00 | 43,431.05 | 43,657.49 |
+
+**분석**: 
+- Scenario 1에서 프레임 수가 증가할수록 메모리 사용량이 증가합니다 (49 프레임: 47.9GB → 193 프레임: 62.9GB)
+- Scenario 2에서 720p는 480p보다 약 5.5GB 더 많은 메모리를 사용합니다
+- 720p 해상도에서 프레임 수에 따른 메모리 사용량 변화가 큽니다
+
+---
+
+## 참고사항
+
+### 비디오 파일 접근 방법
+
+1. **표의 비디오 링크**: 각 테스트 결과 표에서 📹 아이콘을 클릭하여 비디오를 다운로드하거나 재생할 수 있습니다.
+2. **비디오 미리보기 섹션**: 각 시나리오 하단의 `<details>` 섹션을 클릭하여 작은 크기의 비디오를 인라인으로 확인할 수 있습니다.
+3. **직접 링크**: 모든 비디오는 `videos/` 폴더에 저장되어 있으며, 상대 경로로 접근 가능합니다.
+
+### 테스트 환경
+
+- **GPU**: Persistent GPU 사용
+- **해상도**: 720p, 480p
+- **적응형 해상도**: 활성화
+- **프레임 수**: 49, 81, 129, 193, 241 (Scenario 1), 81 (Scenario 2)
